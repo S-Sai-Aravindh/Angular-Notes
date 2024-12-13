@@ -1,0 +1,216 @@
+ng --version
+npm install -g @angular/cli
+ng new projectname // create new angular projectname
+
+npx ng serve // run angular project
+npx ng s -o
+
+
+================================================================================
+
+Day 12 -  11/12/2024
+
+*Angular : 
+            -it is a javascript framework
+            -it provide designing and development platform for creating single page application
+            -latest version is 18
+            -angular is developed and maintain by google
+
+
+S/W : required : 
+    - node.js : node --version
+    - ts : tsc -v
+    - angular : ng --version
+
+
+-angular work on component
+-component : it is a partial part of angular project
+             -it contain code for angular project
+             -it can be any part of project
+
+    -in angular root component name is app 
+
+
+*how to create component in angular
+ng generate component componentName
+ng g c componentName
+
+-when we create component in angular it generate four file
+ html , css , ts , spec.ts 
+
+ how to get output of individual component
+    -go to component ts file and copy its selector name and write as tag where you want
+
+
+*databinding : getting or accessing data from one file to another file in same component
+1. interpolation {{}} : in send data from ts file => html file
+2. property binding[] : in this we set attribute(property) values ts=>html 
+3. event binding () : in this we send data from html file to ts file
+4. two-way binding [()] : in this we can send data from ts <=> html
+                          - to perform two-way databinding we have ngmodel directory but ngmodel directory is not a part of core angular module it is a part of formsModule , for this first we to import formsModule in component.ts file import array  
+
+
+Task 1 : create comp with toggleimgs in which on click have to toggle images
+Task 2 : toggleimgs with four buttons 
+
+
+*directive in angular 
+-it is use to change appearance and behavior as well as perform DOM manipulation in angular
+
+there are 3 types of directive
+1. Structural directive : it is use to perform dom manipulation in angular 
+                          - Structural directive denoted by *
+                          - Structural directives are *ngIf , *ngFor , *ngSwitchCase
+                          - we can apply one directive at a time to single element
+                          - it is part of common module for this first we have to import common in component.  
+        -ng template : display out on the basis of condition
+2. attribute directive : it is use to change appearance and behavior of DOM 
+        -ngStyle : it is use to apply style property on the basis of condition
+        -ngclass : it is use to apply css class on the basis of condition
+        -ngModel : it is use to perform two - way binding
+3. custome directive : directive created by developer
+
+
+
+<div [ngSwitch]="myCourse">
+    <div *ngSwitchCase="'React'">You have selected React</div>
+    <div *ngSwitchCase="'Angular'">You have selected Angular</div>
+    <div *ngSwitchCase="'DotNet'">You have selected Dotnet</div>
+</div>
+
+"myCourse" => inside only  " ? " is called as variable
+
+"'React'" , "'Angular'" , "'DotNet'" => inside " ' ? ' " tells that it is a value
+
+
+component interaction : 
+    accessing data from parent component to child component
+
+    -input() decorator : it is use to send data from parent to child component
+    -output() decorator  : it is use to send data from child to parent component
+
+
+*pipes : 
+    -it is use to transform  property value without changing its original value 
+    -it is denoted by | sign 
+    -there are 3 types of pipes in angular
+        1. inbuilt pipes  : pipe created by developer
+        2. custom pipes : pipe create by developer for particular use
+        3. thirdparty pipes : pipes already developed by third party vendor , first we have to install it and then use it.
+
+mypipes
+
+2. custom pipes 
+    - ng generate pipe pipename 
+
+    npx ng generate pipe shared/custompipe/cube
+
+
+    ng g c mypipes
+
+task: create one custom pipe with name sqauare which will return the square of any number.
+
+*how to bootstrap in angular
+step1 : npm i bootstrap
+step2 : go to angular.json file and in its style array import its path
+step3: restart angular project
+
+
+layout folder
+Nav,pagenotfound,maindashboard,footer,login
+ng g c layout/Nav
+
+froms folder
+angform,utdf,rtf
+ng g c forms/angform
+
+*routing in Angular : 
+-navigation of component
+-to dispaly component output or navigating componently using routing in angular for it we write code in app.routes.ts.file
+-
+
+1.nameing routing
+2.default routing
+3.re-direct routing
+4.parameterize routing
+5.child routing
+6.wild-card routing
+
+
+
+==============================================================================================
+
+    Day 13
+
+    angular.io (For more reference)
+
+    To perform routing , navigating in angular use routerLink property with a tag in html
+
+    *angular form :
+     - there are two types of forms
+     1. UTDF(user template driven form):
+        - when we have create simple form validation in that case we use it
+        - to perform validation we have to use ngModel directory with input element
+        - in this ngForm directorywill hold data of all input element in it
+
+     2. RTF(Reactive Template form):
+        - when we have to write complete logic to perform form validation in that case we use it 
+        - to use rtf form validation first we have to import ReactiveFormModule from FormsModule in component
+        - in rtf we write form validation code in ts file
+        - in this we use mainly two classes
+            1. FormGroup : it will hold information of all input element
+            2. FormControl : it will hold information of individual input element
+
+values on { ? } they are called as objects seperated by ,(Comma)
+
+
+
+*service in angular
+-in angular service is special class with extra power.
+-it is use for multiple uses
+1.to share data with multiple component.
+2.we can implement bussiness logic in it.
+3.we can perfoman external communication(database connection)
+
+*how to create service
+ng g service serviceName
+
+ng g service shared/service/itemsservice
+ng g service shared/service/dbservice
+
+*how to access data from service into angular component
+-if you want to service data into angular for this firt we have import service in component ts file and create instance of service class.
+
+
+*REST Fake API
+
+CRUD
+
+cd src/app/shared/database
+
+npx json-server --watch -p 8000 db.json
+
+
+*How to make api request from angular to server
+-to send request from angular service to server for this we have create instance of HttpClient class in service , but HttpClient class is not part of core angular it is part of HTTPClientModule so first we have to import provideHttp
+
+
+======================================================================================
+
+Day 14
+
+
+Concurrently 
+
+1. npm i -g Concurrently
+2. package.json => in script part => 
+                
+                "json-server":"cd src/app/shared/database && json-server --watch -p 8000 db.json"
+                "start-dev":"npx concurrently \"ng serve\"\"npm run json-server\"",
+
+                "json-server": "cd src/app/shared/database && json-server --watch -p 8000 db.json",
+    "start-dev": "npx concurrently \"ng serve\" \"npm run json-server\"",
+
+
+
+npm install concurrently --save-dev
