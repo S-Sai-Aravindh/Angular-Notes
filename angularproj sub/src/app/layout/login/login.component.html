@@ -1,0 +1,9 @@
+<div class="main mt-5">
+    <form class="mainBox">
+        <label>Enter UserID: </label>
+    <input type="text" name="uid" class="form-control" [(ngModel)]="uid">
+    <label>Enter Password: </label>
+    <input type="text" name="upass" class="form-control" [(ngModel)]="upass">
+    <button type="button" (click)="checkUser()" class="btn btn-primary mt-2">Login</button>
+    </form>
+</div>

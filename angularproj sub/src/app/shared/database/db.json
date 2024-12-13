@@ -1,0 +1,44 @@
+{
+  "Products": [
+    {
+      "pname": "PS5",
+      "pprice": 45000,
+      "pcompany": "Sony",
+      "pquntity": "75",
+      "id": "104"
+    },
+    {
+      "id": "104",
+      "pname": "PS5",
+      "pprice": 45000,
+      "pcompany": "Sony",
+      "pquntity": 5
+    },
+    {
+      "id": "166c",
+      "pname": "Monitor",
+      "pprice": "30000",
+      "pcompany": "Changepond Technologies",
+      "pquntity": "34"
+    },
+    {
+      "id": "60d0",
+      "pname": "Monitor",
+      "pprice": "30000",
+      "pcompany": "Changepond Technologies",
+      "pquntity": "34"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "userId": "admin@gmail.com",
+      "userpass": "admin@123"
+    },
+    {
+      "id": "2",
+      "userId": "rajkumar@gmail.com",
+      "userpass": "raj@123"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<p>databinding works!</p>
+<!-- 1. interpolation -->
+<strong>{{myName}}</strong><br>
+<strong>{{100+30}}</strong><br>
+<!-- 2. databinding  -->
+<!-- <img src={{imgzoro}} alt="Zoro" width="80%"> -->
+
+<!-- <img [src]="imgzoro" [alt]="myName" width="80%"><br> -->
+
+
+<!-- 3. event binding -->
+ <button type="button" (click)="greeting('Zoro')">Click</button>
+<!-- 4. two way data binding -->
+<input type="text" name="items" [(ngModel)]="inputData">

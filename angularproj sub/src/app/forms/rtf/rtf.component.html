@@ -1,0 +1,31 @@
+<p class="mt-2">rtf works!</p>
+
+
+<form [formGroup]="empForm" (ngSubmit)="getData()" class="box">
+    <div>
+        <label>Enter your First Name:</label>
+        <input type="text" name="fname" formControlName="fname" class="form-control">
+        <div *ngIf="empForm.get('fname').touched && empForm.get('fname').invalid">
+            <div *ngIf="empForm.get('fname').errors.required" class="alert alert-danger">Fname is required</div>
+            <div *ngIf="empForm.get('fname').errors.pattern" class="alert alert-danger">Fname must only contain characters</div>
+        </div>  
+    </div>
+    <div>
+        <label>Enter your Last Name:</label>
+        <input type="text" name="lname" formControlName="lname" class="form-control">
+        <div *ngIf="empForm.get('lname').touched && empForm.get('lname').invalid">
+            <div *ngIf="empForm.get('lname').errors.required" class="alert alert-danger">Lname is required</div>
+            <div *ngIf="empForm.get('lname').errors.pattern" class="alert alert-danger">Lname must only contain characters</div>
+        </div>
+    </div>
+    <div>
+        <label class="form-check-label">
+                <input type="checkbox" name="term" formControlName="term" class="form-check-input">
+                I accept terms and conditions
+        </label>
+        <div *ngIf="empForm.get('term').touched && empForm.get('term').invalid">
+                <div *ngIf="empForm.get('term').errors.required" class="alert alert-danger">Please accept Terms and Conditions</div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

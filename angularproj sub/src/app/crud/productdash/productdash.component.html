@@ -1,0 +1,27 @@
+<p>productdash works!</p>
+<button routerLink="/maindashboard/prodadd" class='btn btn-primary btn-sm mt-2 mb-3'> Add</button>
+<table class="table table-hover table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Company</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productArray"> 
+            <td>{{product.id}}</td>
+            <td>{{product.pname}}</td>
+            <td>{{product.pprice}}</td>
+            <td>{{product.pcompany}}</td>
+            <td>{{product.pquntity}}</td>
+            <td>
+                <a herf="" [routerLink]="['/maindashboard/prodedit',product.id]" class="btn btn-outline-success">Edit</a>&nbsp;
+                <button type="button" class="btn btn-outline-danger" (click)="deleteData(product.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

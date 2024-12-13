@@ -1,0 +1,14 @@
+<p>item works!</p>
+
+<button type="button" (click)="itemObj.Welcome('Sai','Changepond')">Call me</button><br>
+
+<div class="card" *ngFor="let item of myItems" style="float: left;">
+    <div class="card-header">
+        <img [src]="item.imgPath" width="300px">
+    </div>
+    <div class="card-body">
+        <h2 class="card-title">{{item.name}}</h2>
+        <strong class="card-text">{{item.price}}</strong>
+        <p>{{item.description}}</p>
+    </div>
+</div>

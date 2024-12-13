@@ -1,0 +1,17 @@
+<p>productadd works!</p>
+<form #pdata="ngForm"  (ngSubmit)="addData(pdata.value)" class="box">
+
+    <label class="form-label">Enter product name : </label>
+    <input type="text" name="pname" class="form-control" ngModel>
+
+    <label class="form-label">Enter price : </label>
+    <input type="text" name="pprice" class="form-control" ngModel>
+
+    <label class="form-label">Enter product company : </label>
+    <input type="text" name="pcompany" class="form-control" ngModel>
+
+    <label class="form-label">Enter product quantity : </label>
+    <input type="text" name="pquntity" class="form-control" ngModel>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
